@@ -1,4 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Tabs from "./tab";
+
+function App(){
+const [state, setState] = useState(1);
+
+const action = (index: any) => {
+    setState(index);
+    console.log("checked", index);
+};
+}
+
 
 class About extends React.Component{
     render(){
@@ -23,12 +34,13 @@ class About extends React.Component{
                         pressure, manage and communicate ideas 
                         clearly and effectively</p>
                 
-                    <div className="tab-titles">
+                    <Tabs/>
+                    {/* <div className="tab-titles">
                         <p className="tab-links active" > Skills</p>
                         <p className="tab-links" >Experience</p>
                         <p className="tab-links">Education</p>
                     </div>
-                    <div id="skills" className="tab-contents active">
+                    <div id="skills" className="tab-contents active" onClick={App}>
                         <ul>                            
                             <li><span>Web Development</span><br/> Web Application Development</li>
                             <li><span>UI/UX</span><br/> Designing Web/App Interfaces</li>
@@ -36,7 +48,7 @@ class About extends React.Component{
                         </ul>
                     </div>
 
-                    <div id="experience" className="tab-contents">
+                    <div id="experience" className="tab-contents" onClick={App}>
                         <ul>
                             <li><span>2016 - Current</span><br/>Frontend Developer & UI/UX Designer 
                                 <br/>
@@ -58,12 +70,12 @@ class About extends React.Component{
                         </ul>
                     </div>
 
-                    <div id="education" className="tab-contents">
+                    <div id="education" className="tab-contents" onClick={App}>
                         <ul>
                             <li><span>2013</span><br/> Bachelors in Computer Engineering, Mumbai University</li>
                             <li><span>2010</span><br/> Diploma in Computer Engineering, MSBTE</li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -1,3 +1,55 @@
+:root{
+  --primary-color-background:#fff;
+  --title-color:#000;
+  --content-heading-color: #cd5b3a;
+  --content-color: #333;
+  --folly-color:#FF004F;
+  --icon-primary-color:#ababab;
+  --card-bg: #f7f7f7;
+  --card-bg-folly-color: #f1f1f1;
+  --card-hover-bg-folly-color:#f1f1f1;
+  --border-1px: #e3e3e3;
+  --button-text-color:#fff;
+  --button-see-more-txt-color: #FF004F;
+  --form-input-bg: #eaeaea;
+  --h1-font:2.4rem;
+  --services-para-font-weight: 400;
+  --para-font-weight: 500;
+  --mood-border-color: #adadad;
+  --mood-hover-bg: #f1f1f1;
+  --contact-color: #6d6d6d;
+  --contact-link-color: #e1537f;
+  --copyright-color: #747474;
+  --modal-bg: rgb(20 21 31 / 76%);
+  --modal-content-bg: #2c2c2c;
+}
+
+/* Dark theme */
+body.dark{
+  --primary-color-background:#0A0F1E;
+  --title-color:#fff;
+  --content-heading-color: #bf8777;
+  --content-color: #fff;
+  --folly-color:#FF004F;
+  --icon-primary-color:#ababab;
+  --card-bg: #141C25;
+  --card-hover-bg-folly-color:#FF004F;
+  --border-1px: #000;
+  --button-text-color:#fff;
+  --button-see-more-txt-color:#fff;
+  --form-input-bg:#141C25;
+  --h1-font: 2rem;
+  --services-para-font-weight: 300;
+  --para-font-weight: 300;
+  --mood-border-color: #5d5d5d;
+  --mood-hover-bg: #2e2e2e;
+  --contact-color: #c3c3c3;
+  --contact-link-color :#ab6565;
+  --copyright-color: #ababab;
+  --modal-bg: rgb(30 23 23 / 77%);
+  --modal-content-bg: #252a39;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -22,8 +74,21 @@ html{
   scroll-behavior: smooth;
 }
 body{
+  background-color: var(--primary-color-background);
+  color: var(--content-color);
+}
+
+/* .dark {
   background-color: #090909;
   color: #fff;
+  }
+  .light {
+  background-color: #fff;
+  color: #333;
+  } */
+
+h1{
+  font-size: var(--h1-font)
 }
 
 #header{
@@ -32,6 +97,10 @@ body{
   background-image: url('../public/images/desktop_bg21.png');
   background-size: cover;
   background-position: center;
+}
+
+body.light #header{
+  background-image: url('../public/images/desktop_light_bg2.png');
 }
 
 .container{
@@ -56,7 +125,7 @@ nav ul li{
 }
 
 nav ul li a{
-  color: #fff;
+  color: var(--title-color);
   text-decoration: none;
   font-size: 18px;
   position: relative;
@@ -66,7 +135,7 @@ nav ul li a::after{
   content: "";
   width: 0;
   height: 3px;
-  background: #ff004f;
+  background: var(--folly-color);
   position: absolute;
   left:0;
   bottom:-6px;
@@ -77,27 +146,64 @@ nav ul li a:hover::after{
   width: 100%;
 }
 
+nav button{
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 40px;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #adadad;
+  transition: 0.5s;
+}
+
+nav button:hover{
+  background-color: var(--mood-hover-bg);
+  border: 1px solid #c3c3c3;
+}
+
+nav button .fa-solid{
+  display: inline;
+  font-size: 20px;
+  color: var(--content-color);
+}
+
+nav button .fa-solid.sun{
+  display: none;
+}
+
+body.dark nav button .fa-solid.moon{
+  display: none;
+}
+
+body.dark nav button .fa-solid.sun{
+  display: inline;
+  font-size: 20px;
+  color: var(--content-color);
+}
+
 .header-text{
-  margin-top: 20%;
-  font-size: 30px;
+  margin-top: 16%;
+  font-size: 34px;
 }
 
 .header-text h1{
   font-size: 50px;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .header-text p{
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .header-text h1 span{
-  color: #FF004F;
+  color: var(--folly-color);
 }
 
 #about{
   padding: 80px 0;
-  color:#efefef;
+  color:var(--content-color);
 }
 
 .row{
@@ -122,7 +228,7 @@ nav ul li a:hover::after{
 .subtitle{
   font-size: 60px;
   font-weight: 600;
-  color: aliceblue;
+  color: var(--title-color);
 }
 
 .tab-titles{
@@ -136,6 +242,10 @@ nav ul li a:hover::after{
   font-weight: 500;
   cursor: pointer;
   position: relative;
+  color: var(--title-color);
+  background-color: transparent;
+  outline: none;
+  border: 0;
 }
 
 .tab-links::after{
@@ -145,7 +255,7 @@ nav ul li a:hover::after{
   left:0;
   bottom: -8px;
   height: 3px;
-  background-color: #ff004f;
+  background-color: var(--folly-color);
   transition: 0.5s; 
 }
 
@@ -156,19 +266,23 @@ nav ul li a:hover::after{
 .tab-contents ul li{
   list-style: none;
   margin:10px 0;
+  color: var(--content-color);
+  font-weight: var(--services-para-font-weight);
+    font-size: 15px;
 }
 
 .tab-contents ul li span{
   font-size: 15px;
-  color: #bf8777;
+  color: var(--content-heading-color);
 }
 
-.tab-contents {
+/* .tab-contents {
   display: none;
-}
+} */
 
-.tab-contents.active{
-  display: block;
+.tab-contents{
+  
+  transition: 0.5s;
 }
 
 /* Services Page Css */
@@ -184,8 +298,9 @@ nav ul li a:hover::after{
   margin-top: 50px;
 }
 
-.services-list div{
-  background-color: #262626;
+.services-list .card-parent{
+  /* background-color: var(--card-bg); */
+  background-color: var(--card-bg);
   padding: 40px;
   font-size: 13px;
   font-weight: 300;
@@ -193,38 +308,140 @@ nav ul li a:hover::after{
   transition: background 0.5s, transform 0.5s;
 }
 
-.services-list div h2{
+.services-list .card-parent h2{
   font-size:30px;
   font-weight: 500;
   margin-bottom: 15px;
 }
 
-.services-list div a{
+.services-list .card-parent p{
+  font-weight: var(--services-para-font-weight);
+}
+
+.services-list .card-parent a{
   text-decoration: none;
-  color: #fff;
+  color: var(--title-color);
   font-size: 12px;
   margin-top:20px;
   display: inline-block;
   border-bottom: 1px solid #464646;
 }
 
-.services-list div .fa-solid{
+.services-list .card-parent .fa-solid{
   font-size: 35px;
   margin-bottom: 30px;
 }
 
-.services-list div .fa-solid-2 {
+.services-list .card-parent .fa-solid-2{
   font-size: 38px;
   margin-bottom: 20px;
 }
 
-.services-list div:hover{
-  background: #ff004f;
+.services-list .card-parent button{
+  border: 0;
+  background-color: transparent;
+  margin-top: 16px;
+  cursor: pointer;
+  color: var(--title-color);
+  font-weight: 500;
+  /* position: absolute; */
+  /* bottom: 30px;
+  left: 42px; */
+}
+
+.services-list .modal-window-parent .fa-solid-2 {
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.services-list .card:hover{
+  background: var(--card-hover-bg-folly-color);
   transform: translateY(-10px);
 }
 
-.services-list div:hover a{
-  border-bottom: 1px solid #ffffff;
+.services-list .card-parent:hover button.see-more{
+  border-bottom: 1px solid var(--contact-color);
+}
+
+.services-list .card:hover a{
+  border-bottom: 1px solid var(--title-color);
+}
+
+.services-list .modal-window-parent{
+  position: fixed;
+    width: 100%;
+    height: 100%;
+    
+  display: block;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+.services-list .modal-window-parent.active{
+  inset: 0;
+  z-index: 2;
+  background-color: var(--modal-bg);
+}
+
+.services-list .modal-window-parent .content{
+  position: absolute;
+  width: 380px;
+    /* height: 100%; */
+    padding: 28px 36px;
+    background-color: var(--modal-content-bg);
+    border-radius: 8px;
+    color: var(--title-color);
+}
+
+.services-list .modal-window-parent .closeButton{
+  position: absolute;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    top: 0px;
+    right: 14px;;
+    cursor: pointer;
+}
+
+.services-list .modal-window-parent .content .heading{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.services-list .modal-window-parent .content .para{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+
+
+.services-list .modal-window-parent .content p{
+  display: block;
+
+}
+
+.services-list .modal-window-parent .content li{
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  list-style: none;
+
+  display: flex;
+  column-gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 2px;
+}
+
+.services-list .modal-window-parent .content .fa-solid{
+  align-self: center;
+  font-size: 16px;
+  margin-bottom: 0px;
+  align-self: center;
 }
 
 /* Portfolio Page Css */
@@ -243,6 +460,7 @@ nav ul li a:hover::after{
   border-radius: 14px;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--border-1px);
 }
 
 .work img{
@@ -269,6 +487,7 @@ nav ul li a:hover::after{
   text-align: center;
   font-size: 14px;
   transition: height 0.5s;
+  color: #fff;
 }
 
 .layer h3{
@@ -278,7 +497,7 @@ nav ul li a:hover::after{
 
 .layer a{
   margin-top: 20px;
-  color: #ff004f;
+  color: var(--folly-color);
   text-decoration: none;
   font-size: 10px;
   line-height: 54px;
@@ -289,7 +508,7 @@ nav ul li a:hover::after{
   text-align: center;
 }
 .layer a .fa-solid{
-  color: #ff004f;
+  color: var(--folly-color);
   font-size: 16px;
 }
 
@@ -306,16 +525,17 @@ nav ul li a:hover::after{
   display: block;
   margin: 50px auto;
   width: fit-content;
-  border: 1px solid #ff004f;
+  border: 1px solid var(--folly-color);
   padding: 14px 50px;
   text-decoration: none;
   border-radius: 6px;
-  color: #fff;
+  color: var(--button-see-more-txt-color);
   transition: background 0.5s;
 }
 
 .btn:hover{
-  background: #ff004f;
+  color: var(--button-text-color);
+  background: var(--folly-color);
 }
 
 /* Contact page css */
@@ -333,7 +553,7 @@ nav ul li a:hover::after{
 }
 
 .contact-left p .fa-solid{
-  color: #ff004f;
+  color: var(--folly-color);
   margin-right: 15px;
   font-size: 18px;
 
@@ -347,35 +567,94 @@ nav ul li a:hover::after{
   text-decoration: none;
   font-size: 22px;
   margin-right: 15px;
-  color: #ababab;
+  color: #848484;
   display: inline-block;
   transition: transform 0.5s;
 }
 
 .social-icons a:hover{
-  color: #ff004f;
-  transform: translateY(-5px);
+  /* color: var(--folly-color);
+  transform: translateY(-5px); */
 }
 
 .btn.btn2{
   display: inline-block;
-  background: #ff004f;
+  background: var(--folly-color);
+  color: var(--button-text-color);
 }
 
 .contact-right form{
   width: 100%;
 }
 
+.container.contact-main{
+  text-align: center;
+}
+
+.contact-card-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-gap: 40px;
+  margin: 50px 240px;
+}
+
+.contact-card{
+  padding: 20px 20px;
+  font-size: 16px;
+  text-align: center;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  letter-spacing: .2px;
+  font-weight: var(--para-font-weight);
+}
+
+
+.contact-card p:nth-child(3){
+  font-weight: var(--services-para-font-weight);
+  color: var(--contact-color);
+  margin-top: 1px;
+  font-size: 15px;
+}
+
+.contact-card-list.social-icons .fa-solid{
+  margin-right: 0px;
+  color: var(--title-color);
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+
+.contact-card-list.social-icons .fa-solid.arrow{
+  font-size: 10px;
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-top: 4px;
+  color: var(--contact-link-color);
+  transition: transform 0.5s;
+}
+
+.contact-card-list a.link{
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-right: 0;
+  color: var(--contact-link-color);
+}
+
+.contact-card:hover .fa-solid.arrow{
+  transform: translateX(5px);
+}
+
 form input, form textarea{
   width: 100%;    
   border: 0;
   outline: none;
-  background: #262626;
+  background: var(--form-input-bg);
   padding: 15px;
   margin: 15px 0;
-  color: #fff;
+  color: var(--content-color);
   font-size: 18px;
   border-radius: 6px;
+  resize: none;
 }
 
 form .btn2{
@@ -387,7 +666,7 @@ form .btn2{
 
 #msg{
   font-size: 16px;
-  color: #ff004f;
+  color: var(--folly-color);
   display: block;
   margin-top: -20px;
 }
@@ -396,16 +675,16 @@ form .btn2{
   width: 100%;
   text-align: center;
   padding: 24px 0;
-  background: #262626;
+  background: var(--card-bg);
   font-weight: 300;
   margin-top: 20px;
-  color: #ababab;
+  color: var(--copyright-color);
   font-size: 14px;
 }
 
-.copyright i{
+.copyright .fa-solid{
   
-  color: #FF004F;
+  color: #adadad;
 }
 nav .fa-solid{
   display: none;
@@ -432,7 +711,7 @@ nav .fa-solid{
   }
 
   nav ul{
-      background: #ff004f;
+      background: var(--folly-color);
       position: fixed;
       top: 0;
       right: -200px;
