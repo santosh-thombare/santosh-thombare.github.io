@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/santosh-thombare.github.io/static/css/main.fb660d76.css",
+    "main.js": "/santosh-thombare.github.io/static/js/main.1a201eb0.js",
+    "static/js/787.21d17fcb.chunk.js": "/santosh-thombare.github.io/static/js/787.21d17fcb.chunk.js",
+    "static/media/mobile_bg.png": "/santosh-thombare.github.io/static/media/mobile_bg.2394ae3d7fb2adde7084.png",
+    "static/media/desktop_light_bg2.png": "/santosh-thombare.github.io/static/media/desktop_light_bg2.f2828c968081e6b72a8f.png",
+    "static/media/desktop_bg21.png": "/santosh-thombare.github.io/static/media/desktop_bg21.5fb27d2d1f12b67e7215.png",
+    "index.html": "/santosh-thombare.github.io/index.html",
+    "main.fb660d76.css.map": "/santosh-thombare.github.io/static/css/main.fb660d76.css.map",
+    "main.1a201eb0.js.map": "/santosh-thombare.github.io/static/js/main.1a201eb0.js.map",
+    "787.21d17fcb.chunk.js.map": "/santosh-thombare.github.io/static/js/787.21d17fcb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb660d76.css",
+    "static/js/main.1a201eb0.js"
+  ]
+}
