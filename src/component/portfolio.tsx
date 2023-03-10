@@ -1,8 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTimes, faBars, faUpRightFromSquare, faPenNib, faCode, faPaperPlane, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { RiAppStoreLine } from "react-icons/ri";
+import { faUpRightFromSquare,  } from '@fortawesome/free-solid-svg-icons';
 
 class Portfolio extends React.Component{
     render(){
@@ -45,7 +43,7 @@ class Portfolio extends React.Component{
                         </div>
 
                     </div>
-                    <a href="#" className="btn">See more</a>
+                    <a  className="btn">See more</a>
                 </div>
             </div>
         )

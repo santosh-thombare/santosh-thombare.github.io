@@ -1,13 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { IoMdSunny } from "react-icons/io";
 
 function App(){
     const[theme, setTheme] = useState('dark');
-    const [isMoon, setIsActive] = useState('faMoon');
 
     const toggleTheme = () => {
         if(theme === 'dark'){
@@ -16,17 +14,9 @@ function App(){
             else{
             setTheme('dark');
             }
-            //waveHello();
+            
         };
 
-        const waveHello = () => {
-            if(theme === 'faMoon'){
-                setIsActive('faMoon');
-                }
-                else{
-                    setIsActive('faPhone');
-                }
-            };
         
 
         useEffect(()=>{document.body.className = theme}, [theme]);
@@ -43,7 +33,7 @@ class Nav extends React.Component{
         return(
             <div className="container">  
                 <nav>
-                    <a href="#header"><img src="images/logo2.png" className="logo"/></a>
+                    <a href="#header"><img src="images/logo2.png" className="logo" alt=""/></a>
                     
                     <ul id="sidemenu">                    
                         <li><AnchorLink href="#header" id="">Home</AnchorLink ></li>

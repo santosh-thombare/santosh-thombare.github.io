@@ -1,6 +1,5 @@
 {
   "name": "mywebsite",
-  "homepage": "https://santosh-thombare.github.io/santosh-thombare.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
