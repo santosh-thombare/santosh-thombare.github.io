@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 :root{
   --primary-color-background:#fff;
   --title-color:#000;
@@ -146,6 +147,8 @@ nav ul li a:hover::after{
   width: 100%;
 }
 
+
+
 nav button{
   background: none;
   outline: none;
@@ -170,6 +173,10 @@ nav button .fa-solid{
 }
 
 nav button .fa-solid.sun{
+  display: none;
+}
+
+nav .menuAction{
   display: none;
 }
 
@@ -701,14 +708,18 @@ nav .fa-solid{
 }
 
 /* Responsive CSS */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   #header{
       background-image: url(../public/images/mobile_bg.png);
   }
 
+  body.light #header{
+    background-image: url(../public/images/mobile_bg_light.png);
+  }
+
   .header-text{
-      margin-top: 100%;
-      font-size: 16px;
+      margin-top: 0%;
+      font-size: 22px;
   }
 
   .header-text h1{
@@ -732,6 +743,19 @@ nav .fa-solid{
       transition: 0.5s;
   }
 
+  nav .menuAction {
+    display: inline;
+}
+
+  nav ul.active{
+    right: 0px;
+  }
+
+
+  nav ul.active .fa-bars{
+    display: none;
+  }
+
   nav ul li{
       display: block;
       margin: 25px;
@@ -739,10 +763,17 @@ nav .fa-solid{
 
   nav .fa-solid.fa-times{
       position: absolute;
-      top: 25px;
-      left: 25px;
+      top: 35px;
+      right: 35px;
       cursor: pointer;
+      /* display: none; */
+      z-index: 2;
   } 
+
+  nav button{
+    margin: 25px;
+    border-color: var(--title-color);
+  }
 
   .subtitle{
       font-size: 40px;
@@ -757,7 +788,7 @@ nav .fa-solid{
   }
 
   .about-col-2{
-      font-size: 14px;
+      font-size: 16px;
   }
 
   .tab-links{
@@ -765,11 +796,25 @@ nav .fa-solid{
       margin-right: 20px;
   }
 
+  .tab-contents ul li span, .tab-contents ul li{
+    font-size: 16px;
+  }
+
+  .services-list .card-parent p{
+    font-size: 15px;
+  }
+
   .contact-left, .contact-right{
       flex-basis: 100%;
   }
 
+  .contact-card-list{
+    margin: 50px 0px 70px;
+  }
+
   .copyright{
-      font-size: 14px;
+    font-size: 12px;
+    margin: 0px;
+    padding: 20px 52px;
   }
 }

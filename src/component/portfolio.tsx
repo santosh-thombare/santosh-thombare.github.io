@@ -43,7 +43,7 @@ class Portfolio extends React.Component{
                         </div>
 
                     </div>
-                    <a  className="btn">See more</a>
+                    <a href="#" className="btn">See more</a>
                 </div>
             </div>
         )
